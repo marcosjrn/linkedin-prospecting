@@ -1,0 +1,20 @@
+# Dados de leads e resultados de buscas: nunca publicar
+prospeccao/
+*.xlsx
+*.csv
+qualified*.json
+run.json
+state.json
+
+# Pacotes e temporários
+*.zip
+*.tmp
+__pycache__/
+*.pyc
+.venv/
+venv/
+
+# Sistema
+.DS_Store
+Thumbs.db
+desktop.ini

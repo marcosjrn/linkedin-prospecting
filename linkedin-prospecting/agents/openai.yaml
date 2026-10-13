@@ -1,0 +1,21 @@
+interface:
+  display_name: Prospecção LinkedIn com IA
+  short_description: Busque e qualifique leads do LinkedIn pelo seu ICP
+  default_prompt: Use $linkedin-prospecting para preparar minha busca de leads e entregar
+    uma lista qualificada em Excel.
+  icon_small: assets/icon.svg
+  icon_large: assets/icon.svg
+dependencies:
+  tools:
+  - type: mcp
+    value: apify
+    description: Executar os Actors de perfis e empresas com a conta Apify do usuário
+    transport: streamable_http
+    url: https://mcp.apify.com
+policy:
+  products:
+  - chatgpt
+  - codex
+  - api
+  - atlas
+  allow_implicit_invocation: true
