@@ -79,4 +79,4 @@ Cole o mesmo pedido de instalação. Seu cliente ideal e sua conexão com a Apif
 
 ---
 
-Criado por [SEU NOME] · [LINK DO SEU PERFIL NO LINKEDIN]
+Criado por [Marcos Júnior](https://www.linkedin.com/in/marcos-j%C3%BAnior-537bba282/) · Licença [MIT](LICENSE)
