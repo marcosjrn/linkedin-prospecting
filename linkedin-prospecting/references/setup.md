@@ -30,6 +30,22 @@ Não mandar comandos `claude` para usuário Codex.
 
 ChatGPT na web e no celular não carrega Skills avulsas; orientar o usuário a usar o Codex.
 
+## Ambiente do Excel (Claude Code e Codex)
+
+Preparar na instalação ou no primeiro uso, antes da primeira busca paga. O usuário não precisa saber o que é Python: não pedir que instale, configure ou programe.
+
+1. Se `excel_python` do state.json existir e `<excel_python> -c "import openpyxl"` funcionar, pular o resto.
+2. Procurar Python 3.9+ que realmente execute: `python3`, `python` ou `py -3` com `-c "import sys; print(sys.executable)"`. No Windows, `python` pode ser atalho da Microsoft Store que não executa; só vale se imprimir o caminho. No macOS, `/usr/bin/python3` sem as ferramentas da Apple abre janela de instalação; tratar como ausente.
+3. Sem Python, avisar em uma linha e instalar pelo canal oficial do sistema, no escopo do usuário:
+   > Vou instalar o Python (gratuito), que gera suas planilhas Excel. Se aparecer um pedido de permissão, é só aprovar.
+   - Windows: `winget install -e --id Python.Python.3.14 --scope user --silent --accept-package-agreements --accept-source-agreements` (ou versão 3 estável mais recente do winget; se o escopo não for aceito, repetir sem `--scope`).
+   - macOS: com Homebrew, `brew install python`; sem Homebrew, `xcode-select --install` e orientar: "Na janela da Apple, clique em Instalar e me avise quando terminar. Pode levar alguns minutos."
+   - Linux: usar python3 do sistema; se faltar, mostrar só o comando do gerenciador de pacotes, pois exige senha.
+   A sessão pode não enxergar o PATH novo: localizar o executável instalado (Windows: `py -3` ou `%LOCALAPPDATA%\Programs\Python\Python3*\python.exe`) em vez de pedir reinício.
+4. Criar ambiente isolado `venv/` na mesma pasta do state.json (conversation.md), nunca na pasta da Skill, e instalar só `openpyxl`. Reutilizar se já existir. Executável: `venv/Scripts/python.exe` (Windows) ou `venv/bin/python` (macOS/Linux).
+5. Validar `import openpyxl` e salvar o caminho em `excel_python` no state.json, preservando as outras chaves.
+6. Se falhar (sem winget, permissão negada, rede bloqueada), não travar: seguir com configuração e busca, avisar em uma frase que a planilha será gerada depois e preservar os dados. Nunca pedir que o usuário edite PATH ou rode comandos técnicos.
+
 ## Fontes oficiais
 
 Conferidas em 2026-10-13; consultar novamente se interface/comando divergir:

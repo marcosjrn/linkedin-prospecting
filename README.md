@@ -17,7 +17,6 @@ A Skill **não envia mensagens** e não faz nenhum contato por você.
    - **Claude Code**: no app do Claude para computador (aba "Code") ou no terminal.
    - **Codex**: no app do ChatGPT para computador (opção "Codex"), no terminal ou na extensão do seu editor. O ChatGPT no navegador não carrega Skills.
 2. **Conta na Apify** ([apify.com](https://apify.com)): é a plataforma que coleta os dados do LinkedIn. A própria Skill te guia na conexão, passo a passo.
-3. **Python instalado** (recomendado): usado para gerar o Excel. Se não tiver, a IA explica o que fazer.
 
 ## Quanto custa
 
@@ -42,6 +41,7 @@ Aprove as permissões que aparecerem: a IA baixa os arquivos e os copia para a s
 
 Só na primeira vez, a IA vai:
 - conectar sua conta Apify (no Codex, depois disso, abra uma conversa nova);
+- preparar o que gera as planilhas Excel (se aparecer um pedido de permissão, é só aprovar);
 - fazer 3 perguntas rápidas sobre o seu negócio e o seu cliente ideal.
 
 <details>
